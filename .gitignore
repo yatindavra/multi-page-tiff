@@ -1,0 +1,14 @@
+node_modules/
+package-lock.json
+
+# Output files
+*.tiff
+*.tif
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

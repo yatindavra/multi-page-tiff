@@ -1,0 +1,35 @@
+{
+  "name": "multi-page-tiff",
+  "version": "1.0.0",
+  "description": "Convert multiple images into a single multi-page TIFF file",
+  "main": "src/index.js",
+  "bin": {
+    "multi-page-tiff": "src/cli.js"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "tiff",
+    "tif",
+    "multi-page",
+    "multipage",
+    "image",
+    "convert",
+    "merge",
+    "combine",
+    "sharp"
+  ],
+  "author": "yatindavra",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yatindavra/multi-page-tiff.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}
