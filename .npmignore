@@ -1,4 +1,7 @@
 test/
+.claudeignore
+CLAUDE.md
+.claude/
 index.js
 *.tiff
 *.tif
