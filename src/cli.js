@@ -11,16 +11,17 @@ if (args.includes('--help') || args.includes('-h') || args.length === 0) {
   Usage:
     multi-page-tiff <image1> <image2> [image3 ...] [options]
 
+  Inputs: JPEG, PNG, or TIFF. JPEGs and TIFFs pass through without
+  re-encoding; PNGs are converted to JPEG (quality 90) then wrapped.
+
   Options:
     -o, --output <path>        Output file path (default: output.tiff)
-    -c, --compression <type>   Compression: none, lzw, deflate, jpeg (default: none)
     -h, --help                 Show this help message
     -v, --version              Show version
 
   Examples:
     multi-page-tiff front.jpg back.jpg
-    multi-page-tiff scan1.png scan2.png scan3.png -o combined.tiff
-    multi-page-tiff a.jpg b.jpg -c lzw -o output.tiff
+    multi-page-tiff scan1.jpg scan2.jpg scan3.jpg -o combined.tiff
   `);
   process.exit(0);
 }
@@ -33,14 +34,11 @@ if (args.includes('--version') || args.includes('-v')) {
 
 // Parse arguments
 let output = 'output.tiff';
-let compression = 'none';
 const images = [];
 
 for (let i = 0; i < args.length; i++) {
   if (args[i] === '-o' || args[i] === '--output') {
     output = args[++i];
-  } else if (args[i] === '-c' || args[i] === '--compression') {
-    compression = args[++i];
   } else {
     images.push(args[i]);
   }
@@ -51,7 +49,7 @@ if (images.length < 2) {
   process.exit(1);
 }
 
-imagesToTiff(images, output, { compression })
+imagesToTiff(images, output)
   .then(() => {
     console.log(`Created ${output} (${images.length} pages)`);
   })

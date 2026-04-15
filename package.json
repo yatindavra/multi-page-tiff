@@ -1,6 +1,6 @@
 {
   "name": "multi-page-tiff",
-  "version": "1.0.2",
+  "version": "1.1.0-beta.0",
   "description": "Convert multiple images into a single multi-page TIFF file",
   "main": "src/index.js",
   "exports": {
@@ -36,6 +36,7 @@
     "node": ">=14.0.0"
   },
   "dependencies": {
-    "sharp": "^0.34.5"
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0"
   }
 }

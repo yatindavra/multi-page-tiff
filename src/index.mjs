@@ -5,4 +5,5 @@ const cjs = require('./index.js');
 export const imagesToTiff = cjs.imagesToTiff;
 export const imagesToTiffBuffer = cjs.imagesToTiffBuffer;
 export const joinTiffBuffers = cjs.joinTiffBuffers;
+export const jpegToTiffBuffer = cjs.jpegToTiffBuffer;
 export default cjs;
